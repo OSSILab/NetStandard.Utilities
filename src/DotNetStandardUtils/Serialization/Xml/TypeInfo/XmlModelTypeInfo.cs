@@ -36,5 +36,16 @@ namespace DotNetStandardUtils.Serialization.Xml
             XmlEntityTypeInfo xmlEntityTypeInfo = GetOrCreateTypeInfo(entityType);
             return xmlEntityTypeInfo.GetOrCreateConstructorParameterTypeInfo(constructorParameterIndex);
         }
+
+        public XmlModelTypeInfo Copy()
+        {
+            XmlModelTypeInfo xmlModelTypeInfo = new XmlModelTypeInfo();
+            foreach (var xmlEntityTypeInfoByType in EntitiesInfoKeyedByType)
+            {
+                xmlModelTypeInfo.EntitiesInfoKeyedByType.Add(xmlEntityTypeInfoByType.Key, xmlEntityTypeInfoByType.Value.Copy());
+            }
+            xmlModelTypeInfo.SerializationTypesKeyedByName.AddRange(SerializationTypesKeyedByName);
+            return xmlModelTypeInfo;
+        }
     }
 }

@@ -39,5 +39,24 @@ namespace DotNetStandardUtils.Serialization.Xml
             }
             return xmlConstructorParameterTypeInfo;
         }
+
+        public XmlEntityTypeInfo Copy()
+        {
+            XmlEntityTypeInfo xmlEntityTypeInfo = new XmlEntityTypeInfo();
+            xmlEntityTypeInfo.EntityType = EntityType;
+            xmlEntityTypeInfo.XmlName = XmlName;
+            xmlEntityTypeInfo.SerializeAsXmlAttribute = SerializeAsXmlAttribute;
+
+            foreach (var propertyTypeInfoByName in PropertiesTypeInfo)
+            {
+                xmlEntityTypeInfo.PropertiesTypeInfo.Add(propertyTypeInfoByName.Key, propertyTypeInfoByName.Value.Copy());
+            }
+
+            foreach (var constructorParameterTypeInfoByPosition in ConstructorParametersTypeInfo)
+            {
+                xmlEntityTypeInfo.ConstructorParametersTypeInfo.Add(constructorParameterTypeInfoByPosition.Key, constructorParameterTypeInfoByPosition.Value.Copy());
+            }
+            return xmlEntityTypeInfo;
+        }
     }
 }

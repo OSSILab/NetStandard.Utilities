@@ -6,13 +6,14 @@
     /// </summary>
     public sealed class XmlModelBuilder
     {
-        internal XmlModelTypeInfo XmlModelInfo { get; } = new XmlModelTypeInfo();
+        internal XmlModelTypeInfo XmlModelInfo { get; }
 
         /// <summary>
         /// <summary>Initializes a new instance of the <see cref="XmlModelBuilder"/> class.</summary>
         /// </summary>
         public XmlModelBuilder()
         {
+            XmlModelInfo = new XmlModelTypeInfo();
             HasKnownEntity<bool>();
             HasKnownEntity<byte>();
             HasKnownEntity<sbyte>();
@@ -30,6 +31,11 @@
             HasKnownEntity<string>();
         }
 
+        private XmlModelBuilder(XmlModelTypeInfo xmlModelTypeInfo)
+        {
+            XmlModelInfo = xmlModelTypeInfo;
+        }
+
         /// <summary>
         /// Specify that an entity type belongs to the XML model.
         /// If the entity type is not already part of the model, it will be added to it.
@@ -40,6 +46,16 @@
         {
             XmlEntityTypeInfo xmlEntityTypeInfo = XmlModelInfo.GetOrCreateTypeInfo(typeof(TEntity));
             return new XmlEntityTypeBuilder<TEntity>(xmlEntityTypeInfo, XmlModelInfo, this);
+        }
+
+        /// <summary>
+        /// Creates an independent copy of the current model.
+        /// </summary>
+        /// <returns>An independent copy of the current model.</returns>
+        public XmlModelBuilder Copy()
+        {
+            XmlModelTypeInfo xmlModelTypeInfo = XmlModelInfo.Copy();
+            return new XmlModelBuilder(xmlModelTypeInfo);
         }
     }
 }
