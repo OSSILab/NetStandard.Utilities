@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetStandardUtils", "NetStandardUtils\NetStandardUtils.csproj", "{0870931D-8B6A-4D2F-9EA8-27D36E810E8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetStandard.Utilities", "NetStandard.Utilities\NetStandard.Utilities.csproj", "{0870931D-8B6A-4D2F-9EA8-27D36E810E8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetStandardUtils.Tests", "NetStandardUtils.Tests\NetStandardUtils.Tests.csproj", "{C362ED2A-1D2E-4686-B608-67B04D7746F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetStandard.Utilities.Tests", "NetStandard.Utilities.Tests\NetStandard.Utilities.Tests.csproj", "{C362ED2A-1D2E-4686-B608-67B04D7746F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
