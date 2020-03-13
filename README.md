@@ -1,1 +1,1 @@
-# dotnetutils
+# NetStandard.Utilities
