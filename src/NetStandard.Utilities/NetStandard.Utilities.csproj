@@ -7,8 +7,7 @@
     <Authors>Open Source Software Initiative Contributors</Authors>
     <Copyright>Open Source Software Initiative Contributors</Copyright>
     <Description>A general purpose open source utility and helper library for .NET development</Description>
-    <Version>0.2.1</Version>
-    <PackageTags>Preview</PackageTags>
+    <Version>0.2.2-preview</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
