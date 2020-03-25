@@ -29,12 +29,14 @@ steps:
 
 
 - task: DotNetCoreCLI@2
-  inputs:
+  displayName: 'Running the tests'
+  inputs: 
     command: 'test'
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
     
 - task: DotNetCoreCLI@2
+  displayName: 'Pack the package'
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
