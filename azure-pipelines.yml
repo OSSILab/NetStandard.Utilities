@@ -27,7 +27,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-
 - task: DotNetCoreCLI@2
   displayName: 'Running the tests'
   inputs: 
@@ -41,7 +40,8 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj;!**/*Tests.csproj'
     nobuild: true
-    versioningScheme: 'byBuildNumber'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'BuildVersion'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish the package'
