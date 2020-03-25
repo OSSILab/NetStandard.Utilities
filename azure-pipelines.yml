@@ -39,7 +39,7 @@ steps:
   displayName: 'Pack the package'
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/*.csproj;!**/*Tests.csproj'
     nobuild: true
     versioningScheme: 'byPrereleaseNumber'
     majorVersion: '1'
