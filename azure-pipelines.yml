@@ -40,8 +40,6 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.csproj;!**/*Tests.csproj'
     nobuild: true
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: 'BuildVersion'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish the package'
