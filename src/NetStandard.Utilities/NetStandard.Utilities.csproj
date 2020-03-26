@@ -7,7 +7,7 @@
     <Authors>Open Source Software Initiative Contributors</Authors>
     <Copyright>Open Source Software Initiative Contributors</Copyright>
     <Description>A general purpose open source utility and helper library for .NET development</Description>
-    <Version>0.9.0-preview</Version>
+    <Version>0.9.1-preview</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
