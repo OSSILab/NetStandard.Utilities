@@ -31,15 +31,27 @@ steps:
   displayName: 'Running the tests'
   inputs: 
     command: 'test'
+    nobuild: true
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
     
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    nobuild: true
+    publishWebProjects: false
+    projects: '''**/*.csproj;!**/*Tests.csproj'''
+    zipAfterPublish: true
+    
+
 - task: DotNetCoreCLI@2
   displayName: 'Pack the package'
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj;!**/*Tests.csproj'
     nobuild: true
+    packagesToPack: '**/*.csproj;!**/*Tests.csproj'
+    
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish the package'
