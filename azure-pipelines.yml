@@ -33,26 +33,7 @@ steps:
     command: 'test'
     nobuild: true
     projects: '**/*Tests/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
-    
-
-- task: DotNetCoreCLI@2
-  displayName: 'Publish binaries'
-  inputs:
-    command: 'publish'
-    projects: '**/*.csproj;!**/*Tests.csproj'
-    publishWebProjects: false
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)/Release'
-    zipAfterPublish: true
-    
-
-- task: DotNetCoreCLI@2
-  displayName: 'Pack the package'
-  inputs:
-    command: 'pack'
-    nobuild: true
-    packagesToPack: '**/*.csproj;!**/*Tests.csproj'
-    
+    arguments: '--configuration $(buildConfiguration)' 
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish the package'
