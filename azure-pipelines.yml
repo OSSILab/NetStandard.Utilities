@@ -37,11 +37,12 @@ steps:
     
 
 - task: DotNetCoreCLI@2
+  displayName: 'Publish binaries'
   inputs:
     command: 'publish'
     nobuild: true
     publishWebProjects: false
-    projects: '''**/*.csproj;!**/*Tests.csproj'''
+    projects: '**/*.csproj;!**/*Tests.csproj'
     zipAfterPublish: true
     
 
