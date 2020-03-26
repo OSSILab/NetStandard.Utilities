@@ -9,6 +9,7 @@
     <Description>A general purpose open source utility and helper library for .NET development</Description>
     <Version>0.2.2-preview</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
