@@ -40,8 +40,6 @@ steps:
   displayName: 'Publish binaries'
   inputs:
     command: 'publish'
-    nobuild: true
-    publishWebProjects: false
     projects: '**/*.csproj;!**/*Tests.csproj'
     zipAfterPublish: true
     
