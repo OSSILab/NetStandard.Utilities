@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Xml.Linq;
 using NUnit.Framework;
 
-namespace NetStandard.Toolkit.Tests
+namespace DotNetToolkit.Tests
 {
     [TestFixture]
     [NUnit.Framework.Category("UnitTests")]

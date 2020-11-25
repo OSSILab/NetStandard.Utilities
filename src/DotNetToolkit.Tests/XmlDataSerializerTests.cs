@@ -5,10 +5,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using NetStandard.Toolkit.Tests.Properties;
+using DotNetToolkit.Tests.Properties;
 using NUnit.Framework;
 
-namespace NetStandard.Toolkit.Tests
+namespace DotNetToolkit.Tests
 {
     class MySerializableEntityBase:MarshalByRefObject
     {

@@ -1,4 +1,4 @@
-# NetStandard.Utilities
+# DotNetToolkit
 A general purpose open source utility and helper library for .NET development
 
 ## Build Status

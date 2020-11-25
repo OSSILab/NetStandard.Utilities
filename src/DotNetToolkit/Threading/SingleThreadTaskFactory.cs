@@ -23,9 +23,9 @@
 *********************************************************************************/
 
 
-
-
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -45,11 +45,17 @@ namespace System.Threading.Tasks
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(ApartmentState apartmentState) : base(new SingleThreadTaskScheduler(apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
         /// <param name="threadName">The name of the thread used by the current scheduler.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(string threadName, ApartmentState apartmentState) : base(new SingleThreadTaskScheduler(threadName, apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
@@ -70,6 +76,9 @@ namespace System.Threading.Tasks
         /// assigned to tasks created by this <see cref="SingleThreadTaskFactory"/> unless another
         /// CancellationToken is explicitly specified while calling the factory methods.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(CancellationToken cancellationToken, ApartmentState apartmentState) : base(cancellationToken, TaskCreationOptions.None, TaskContinuationOptions.None, new SingleThreadTaskScheduler(apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
@@ -78,6 +87,9 @@ namespace System.Threading.Tasks
         /// CancellationToken is explicitly specified while calling the factory methods.</param>
         /// <param name="threadName">The name of the thread used by the current scheduler.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(CancellationToken cancellationToken, string threadName, ApartmentState apartmentState) : base(cancellationToken, TaskCreationOptions.None, TaskContinuationOptions.None, new SingleThreadTaskScheduler(threadName, apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
@@ -95,6 +107,9 @@ namespace System.Threading.Tasks
         /// <param name="taskCreationOptions">The default <see cref="TaskCreationOptions"/> to use when creating tasks with this TaskFactory.</param>
         /// <param name="taskContinuationOptions">The default <see cref="TaskContinuationOptions"/> to use when creating continuation tasks with this TaskFactory.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(TaskCreationOptions taskCreationOptions, TaskContinuationOptions taskContinuationOptions, ApartmentState apartmentState) : base(default, taskCreationOptions, taskContinuationOptions, new SingleThreadTaskScheduler(apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
@@ -102,6 +117,9 @@ namespace System.Threading.Tasks
         /// <param name="taskContinuationOptions">The default <see cref="TaskContinuationOptions"/> to use when creating continuation tasks with this TaskFactory.</param>
         /// <param name="threadName">The name of the thread used by the current scheduler.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(TaskCreationOptions taskCreationOptions, TaskContinuationOptions taskContinuationOptions, string threadName, ApartmentState apartmentState) : base(default, taskCreationOptions, taskContinuationOptions, new SingleThreadTaskScheduler(threadName, apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
@@ -128,6 +146,9 @@ namespace System.Threading.Tasks
         /// <param name="taskCreationOptions">The default <see cref="TaskCreationOptions"/> to use when creating tasks with this TaskFactory.</param>
         /// <param name="taskContinuationOptions">The default <see cref="TaskContinuationOptions"/> to use when creating continuation tasks with this TaskFactory.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(CancellationToken cancellationToken, TaskCreationOptions taskCreationOptions, TaskContinuationOptions taskContinuationOptions, ApartmentState apartmentState) : base(cancellationToken, taskCreationOptions, taskContinuationOptions, new SingleThreadTaskScheduler(apartmentState)) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskFactory"/> class.</summary>
@@ -138,6 +159,9 @@ namespace System.Threading.Tasks
         /// <param name="taskContinuationOptions">The default <see cref="TaskContinuationOptions"/> to use when creating continuation tasks with this TaskFactory.</param>
         /// <param name="threadName">The name of the thread used by the current scheduler.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskFactory(CancellationToken cancellationToken, TaskCreationOptions taskCreationOptions, TaskContinuationOptions taskContinuationOptions, string threadName, ApartmentState apartmentState) : base(cancellationToken, taskCreationOptions, taskContinuationOptions, new SingleThreadTaskScheduler(threadName, apartmentState)) { }
 
 

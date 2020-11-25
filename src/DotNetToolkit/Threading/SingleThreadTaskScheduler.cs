@@ -25,6 +25,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Versioning;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -52,21 +54,28 @@ namespace System.Threading.Tasks
             get { return _schedulerThread.GetApartmentState(); }
         }
 
-
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskScheduler"/> class.</summary>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
         public SingleThreadTaskScheduler() : this(null, ApartmentState.Unknown) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskScheduler"/> class.</summary>
         /// <param name="threadName">The name of the thread used by the current scheduler.</param>
+        [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility")]
         public SingleThreadTaskScheduler(string threadName) : this(threadName, ApartmentState.Unknown) { }
 
         /// <summary>Initializes a new instance of the <see cref="SingleThreadTaskScheduler"/> class.</summary>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskScheduler(ApartmentState apartmentState) : this(null, apartmentState) { }
 
         // <summary>Initializes a new instance of the <see cref="SingleThreadTaskScheduler"/> class.</summary>
         /// <param name="threadName">The name of the thread used by the current scheduler.</param>
         /// <param name="apartmentState">Indicating the ApartmentState of the current scheduler.</param>
+#if NET5_0
+        [SupportedOSPlatform("windows")]
+#endif
         public SingleThreadTaskScheduler(string threadName, ApartmentState apartmentState)
         {
             _schedulerThread = new Thread(RunSchedulerJob);
@@ -81,6 +90,7 @@ namespace System.Threading.Tasks
             }
             _schedulerThread.Start();
         }
+
 
         /// <inheritdoc />
         protected override void QueueTask(Task task)

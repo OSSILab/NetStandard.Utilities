@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using NUnit.Framework;
 
-namespace NetStandard.Toolkit.Tests
+namespace DotNetToolkit.Tests
 {
     [TestFixture]
     [Category("UnitTests")]

@@ -1,4 +1,6 @@
-﻿/*********************************************************************************
+﻿#if !NET5_0
+
+/*********************************************************************************
 * The MIT License(MIT)                                                           *
 *                                                                                *
 * Copyright(c) Open Source Software Initiative Contributors                      *
@@ -83,3 +85,5 @@ namespace System.Collections.Generic
         bool Contains(T item);
     }
 }
+
+#endif

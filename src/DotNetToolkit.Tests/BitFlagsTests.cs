@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace NetStandard.Toolkit.Tests
+namespace DotNetToolkit.Tests
 {
     [TestFixture]
     [Category("UnitTests")]

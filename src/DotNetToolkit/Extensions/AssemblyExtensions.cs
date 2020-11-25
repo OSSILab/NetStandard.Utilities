@@ -1,4 +1,5 @@
-﻿/*********************************************************************************
+﻿#if NET48
+/*********************************************************************************
 * The MIT License(MIT)                                                           *
 *                                                                                *
 * Copyright(c) Open Source Software Initiative Contributors                      *
@@ -49,3 +50,5 @@ namespace System.Reflection
         }
     }
 }
+
+#endif

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace NetStandard.Toolkit.Tests
+namespace DotNetToolkit.Tests
 {
     public static class Extensions
     {
