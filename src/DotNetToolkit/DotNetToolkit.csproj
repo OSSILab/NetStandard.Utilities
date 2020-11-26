@@ -11,7 +11,7 @@
     <PackageId>OSSILab.NetToolKit</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>net toolkit;toolkit;ossilab;dotnet;.net;.net utilities;.net toolkit;xml serialize;xml;serializer;deserialize;readonly set;tree;bitflag;bit flag;conversion;string conversion;task scheduler;</PackageTags>
-    <PackageProjectUrl>https://github.com/OSSILab/NetStandard.ToolKit</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/OSSILab/DotNetToolkit</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     
   </PropertyGroup>
