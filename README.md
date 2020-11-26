@@ -2,7 +2,7 @@
 A general purpose open source utility and helper library for .NET development
 
 ## Build Status
-[![Build Status](https://dev.azure.com/ossilab/NetStandard.Utilities/_apis/build/status/OSSILab.NetStandard.Utilities?branchName=master)](https://dev.azure.com/ossilab/NetStandard.Utilities/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/ossilab/DotNetToolkit/_apis/build/status/OSSILab.DotNetToolkit?branchName=master)](https://dev.azure.com/ossilab/DotNetToolkit/_build/latest?definitionId=2&branchName=master)
 <img src="https://img.shields.io/badge/license-MIT-green.svg" />
 
 ## Get nightly builds
