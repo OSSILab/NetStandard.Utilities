@@ -1,5 +1,4 @@
-﻿#if NET48
-/*********************************************************************************
+﻿/*********************************************************************************
 * The MIT License(MIT)                                                           *
 *                                                                                *
 * Copyright(c) Open Source Software Initiative Contributors                      *
@@ -36,19 +35,40 @@ namespace System.Reflection
     /// </summary>
     public static class AssemblyExtensions
     {
+
         /// <summary>
         /// Gets the directory path of the specified assembly.
         /// </summary>
         /// <param name="assembly">The assembly for which the location needs to be retrieved.</param>
         /// <returns>The directory path of the specified assembly.</returns>
-        public static string GetLocation(this Assembly assembly)
+        public static string GetDirectoryPath(this Assembly assembly)
         {
-            UriBuilder uriBuilder = new UriBuilder(assembly.CodeBase);
-            string unescapedPath = Uri.UnescapeDataString(uriBuilder.Path);
-            string directoryLocation = Path.GetDirectoryName(unescapedPath);
-            return directoryLocation;
+            string assemblyLocation;
+            try
+            {
+                assemblyLocation = assembly.Location;
+            }
+            catch (NotSupportedException e)
+            {
+                throw new Exception("The provided assembly is a dynamic assembly", e);
+            }
+            if (string.IsNullOrWhiteSpace(assemblyLocation))
+            {
+                throw new Exception("The provided assembly is loaded from a byte array");
+            }
+            if (assemblyLocation[0] == '\\' || assemblyLocation[0] == '/')
+            {
+                int escapeCharIndex = assemblyLocation.LastIndexOf(assemblyLocation[0]);
+                if (escapeCharIndex == -1)
+                {
+                    throw new Exception($"Unknown assembly location format:{assemblyLocation}");
+                }
+                return assemblyLocation.Substring(0, escapeCharIndex);
+            }
+            else
+            {
+                return Path.GetDirectoryName(assemblyLocation);
+            }
         }
     }
 }
-
-#endif
