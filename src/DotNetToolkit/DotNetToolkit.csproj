@@ -5,12 +5,12 @@
     <Authors>Open Source Software Initiative Contributors</Authors>
     <Copyright>Open Source Software Initiative Contributors</Copyright>
     <Description>A general purpose open source utility and helper library for .NET development</Description>
-    <Version>0.9.1-preview</Version>
+    <Version>0.9.2-preview</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>OSSILab.NetToolKit</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>net toolkit;toolkit;ossilab;dotnet;.net;.net utilities;.net toolkit;xml serialize;xml;serializer;deserialize;readonly set;tree;bitflag;bit flag;conversion;string conversion;task scheduler;</PackageTags>
+    <PackageTags>net toolkit;toolkit;ossilab;dotnet;.net;.net utilities;.net toolkit;xml serialize;xml;serializer;deserialize;readonly set;tree;permutation;combination;bitflag;bit flag;conversion;string conversion;task scheduler;</PackageTags>
     <PackageProjectUrl>https://github.com/OSSILab/DotNetToolkit</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     

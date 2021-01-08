@@ -34,12 +34,12 @@ namespace System.Mathematics
     public static class MathExtensions
     {
         /// <summary>
-        /// Generate all possible permutations of n objects using Heap's algorithm.
+        /// Generate all possible permutations of n objects using B. R. Heap's algorithm.
         /// </summary>
         /// <typeparam name="T">The type of objects.</typeparam>
         /// <param name="objects">The objects used to generate permutations.</param>
         /// <returns>All possible permutations for the specified <paramref name="objects"/></returns>
-        public static IEnumerable<IReadOnlyCollection<T>> Permutations<T>(this IEnumerable<T> objects)
+        public static IEnumerable<IReadOnlyList<T>> Permutations<T>(this IEnumerable<T> objects)
         {
             if (objects == null)
             {
