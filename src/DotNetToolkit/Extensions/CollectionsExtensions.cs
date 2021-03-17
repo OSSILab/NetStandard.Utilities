@@ -79,5 +79,49 @@ namespace System.Collections.Generic
                 queue.Enqueue(value);
             }
         }
+
+        /// <summary>
+        /// Returns duplicated elements from a sequence by using the default equality comparer to compare values.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of <paramref name="source"/></typeparam>
+        /// <param name="source"></param>
+        /// <returns>An <see cref="IEnumerable{T}"/> that contains duplicated elements from the source sequence.</returns>
+        public static IEnumerable<TSource> FindDuplicates<TSource>(this IEnumerable<TSource> source)
+        {
+            return FindDuplicates(source, null);
+        }
+
+        /// <summary>
+        /// Returns duplicated elements from a sequence by using a specified <see cref="IEqualityComparer{TSource}"/> to compare values.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of <paramref name="source"/></typeparam>
+        /// <param name="source"></param>
+        /// <param name="comparer">An <see cref="IEnumerable{T}"/> to compare values.</param>
+        /// <returns>An <see cref="IEnumerable{T}"/> that contains duplicated elements from the source sequence.</returns>
+        public static IEnumerable<TSource> FindDuplicates<TSource>(this IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)
+        {
+            HashSet<TSource> sourceSet;
+            if (source is ICollection<TSource> sourceCollection)
+            {
+#if NETSTANDARD2_0
+                sourceSet = new HashSet<TSource>(comparer);
+#else
+                sourceSet = new HashSet<TSource>(sourceCollection.Count, comparer);
+#endif
+
+            }
+            else
+            {
+                sourceSet = new HashSet<TSource>(comparer);
+            }
+
+            foreach (TSource item in source)
+            {
+                if (!sourceSet.Add(item))
+                {
+                    yield return item;
+                }
+            }
+        }
     }
 }
